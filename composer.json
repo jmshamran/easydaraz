@@ -1,0 +1,24 @@
+{
+    "name": "daraz/easydaraz",
+    "description": "A package to make api endpoint calls to darz e-commerce site for sellers",
+    "type": "library",
+    "require": {
+        "spatie/array-to-xml": "^2.11"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.0@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shamran",
+            "email": "jmshamran22@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+	"autoload": {
+        "psr-4": {
+            "daraz\\easydaraz\\": "src"
+        }
+    }
+}
