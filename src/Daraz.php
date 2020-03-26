@@ -5,13 +5,13 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
 namespace daraz\easydaraz;
 
 ini_set('max_execution_time', '1000');
 
 use Spatie\ArrayToXml\ArrayToXml;
 use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
 
 class Daraz
 {
@@ -573,28 +573,17 @@ class Daraz
      */
     public function getRequest($queryString)
     {
+
         $url = $this->url . '?' . $queryString;
+        $client = new Client();
+        $response = $client->request('GET', $url);
 
-//        $client = new Client([
-//            'base_uri' => $url,
-//        ]);
-//        $response = $client->request('GET', $client, [
-//            'query' => ['q' => 'curl']
-//        ]);
 
-//        echo $response;
-
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-
-        curl_setopt($ch, CURLOPT_POST, 0);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        $d['status'] = curl_getinfo($ch);
-        $d['response'] = json_decode(curl_exec($ch), true);
-        return $d;
+        return [
+            'status' => $response->getReasonPhrase(),
+            'http_code' => $response->getStatusCode(),
+            'response' => json_decode($response->getBody()->getContents(), true),
+        ];
     }
 
     /**
@@ -603,21 +592,17 @@ class Daraz
      * @param $post mixed
      * @return array
      */
-    public function sendPostRequest($queryString, $post=null)
+    public function sendPostRequest($queryString, $post = null)
     {
         $url = $this->url . '?' . $queryString;
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
+        $client = new Client();
+        $response = $client->request('POST', $url, ['body' => $post]);
 
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        $d['status'] = curl_getinfo($ch);
-        $d['response'] = json_decode(curl_exec($ch), true);
-        return $d;
+        return [
+            'status' => $response->getReasonPhrase(),
+            'http_code' => $response->getStatusCode(),
+            'response' => json_decode($response->getBody()->getContents(), true),
+        ];
     }
 
     private function setApiKeyAttribute($apiKey)
@@ -661,8 +646,8 @@ class Daraz
     private function getTimeStamp()
     {
         date_default_timezone_set("UTC");
-        $now = new DateTime();
-        $now = $now->format(DateTime::ISO8601);
+        $now = new \DateTime();
+        $now = $now->format(\DateTime::ISO8601);
         return $now;
     }
 
@@ -688,8 +673,9 @@ class Daraz
             PHP_QUERY_RFC3986);
     }
 
-    function getNumberFormat($number){
-        return number_format($number,0,'.','');
+    function getNumberFormat($number)
+    {
+        return number_format($number, 0, '.', '');
     }
 
 }
