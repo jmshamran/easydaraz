@@ -10,8 +10,8 @@ This is a package created to make api endpoint calls to darz e-commerce site for
     * require_once(dirname(__FILE__) . '/src/Daraz.php');
     * use daraz\easydaraz\Daraz;
 
-4. Define following variables
+4. Define following variables in your code.
     * $apiKey = 'Your Darz API-Key';
     * $userId = 'Your Daraz E-mail';
     * $url = 'Your Daraz API URL'
-        * Eg: https://api.sellercenter.daraz.lk';   - for Sri Lanka 
+        * Example: https://api.sellercenter.daraz.lk   - for Sri Lanka 

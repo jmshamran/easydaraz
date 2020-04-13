@@ -367,11 +367,11 @@ class Daraz
      * @param $invoice_number string
      * @return array
      */
-    public function setInvoiceNumber($order_ID, $invoice_number)
+    public function setInvoiceNumber($order_item_ID, $invoice_number)
     {
         $parameters = $this->setSpecificParam([
             'Action' => 'SetInvoiceNumber',
-            'OrderId' => $order_ID,
+            'OrderItemId' => $order_item_ID,
             'InvoiceNumber' => $invoice_number,
             'Timestamp' => $this->getTimeStamp(),
         ]);
@@ -387,7 +387,7 @@ class Daraz
      * @param $shipping_provider string
      * @return array
      */
-    public function setStatusToPackedByMarketplace($order_item_IDs, $delivery_type, $shipping_provider)
+    public function setStatusToPackedByMarketplace($order_item_IDs, $delivery_type, $shipping_provider = Null)
     {
         $parameters = $this->setSpecificParam([
             'Action' => 'SetStatusToPackedByMarketplace',
@@ -397,6 +397,7 @@ class Daraz
             'Timestamp' => $this->getTimeStamp(),
         ]);
 
+        $this->removeEmptyFields($parameters);
         $queryString = $this->getQueryString($parameters);
         return $this->sendPostRequest($queryString);
     }
@@ -410,18 +411,19 @@ class Daraz
      * @param $serial_number mixed
      * @return array
      */
-    public function setStatusToReadyToShip($order_item_IDs, $delivery_type, $shipping_provider, $tracking_number, $serial_number = null)
+    public function setStatusToReadyToShip($order_item_IDs, $delivery_type, $tracking_number, $shipping_provider = Null, $serial_number = null)
     {
         $parameters = $this->setSpecificParam([
             'Action' => 'SetStatusToReadyToShip',
             'OrderItemIds' => $order_item_IDs,
             'DeliveryType' => $delivery_type,
-            'ShippingProvider' => $shipping_provider,
             'TrackingNumber' => $tracking_number,
+            'ShippingProvider' => $shipping_provider,
             'SerialNumber' => $serial_number,
             'Timestamp' => $this->getTimeStamp(),
         ]);
 
+        $this->removeEmptyFields($parameters);
         $queryString = $this->getQueryString($parameters);
         return $this->sendPostRequest($queryString);
     }
@@ -591,6 +593,7 @@ class Daraz
      * @param $queryString string
      * @param $post mixed
      * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function sendPostRequest($queryString, $post = null)
     {
@@ -641,7 +644,7 @@ class Daraz
      * This function gets current datetime, to be mostly used in parameter timestamps
      * date_default_timezone_set is only needed if timezone in php.ini is not set correctly.
      * @return DateTime|string
-     * @throws Exception
+     * @throws \Exception
      */
     private function getTimeStamp()
     {
