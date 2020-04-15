@@ -14,4 +14,7 @@ This is a package created to make api endpoint calls to darz e-commerce site for
     * $apiKey = 'Your Darz API-Key';
     * $userId = 'Your Daraz E-mail';
     * $url = 'Your Daraz API URL'
-        * Example: https://api.sellercenter.daraz.lk   - for Sri Lanka 
+        * Example: https://api.sellercenter.daraz.lk   - for Sri Lanka
+        
+5. Instantiate the class
+    * $d = new Daraz($userId, $apiKey, $url);   
