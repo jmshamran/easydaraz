@@ -363,7 +363,7 @@ class Daraz
 
     /**
      * Use this call to set the invoice access key.
-     * @param $order_ID long
+     * @param $order_item_ID long
      * @param $invoice_number string
      * @return array
      */
