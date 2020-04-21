@@ -675,10 +675,5 @@ class Daraz
         return http_build_query($parameters, '', '&',
             PHP_QUERY_RFC3986);
     }
-
-    function getNumberFormat($number)
-    {
-        return number_format($number, 0, '.', '');
-    }
-
+    
 }
