@@ -4,24 +4,25 @@
 ### How to initiate?
 1. Git Clone the repository
 2. Update the Composer
-3. Use these in your file
-
-    * ``require_once(dirname(__FILE__) . '/vendor/autoload.php');``
-    * ``require_once(dirname(__FILE__) . '/src/Daraz.php');``
-    * ``use daraz\easydaraz\Daraz;``
-
+3. Use these in your file  
+   ```go
+    require_once(dirname(__FILE__) . '/vendor/autoload.php');
+    require_once(dirname(__FILE__) . '/src/Daraz.php');
+    use daraz\easydaraz\Daraz;
+   ```
 4. Define following variables in your code.
-    * ``$apiKey = 'Your Darz API-Key';``
-    * ``$userId = 'Your Daraz E-mail';``
-    * ``$url = 'Your Daraz API URL'``
-        * Ex: https://api.sellercenter.daraz.lk   - for Sri Lanka
-        
+    ```go
+    $apiKey = 'Your Darz API-Key';
+    $userId = 'Your Daraz E-mail';
+    $url = 'Your Daraz API URL';
+   ```
+    > ###### ex: https://api.sellercenter.daraz.lk   - for Sri Lanka
 5. Instantiate the class
-    * `$d = new Daraz($userId, $apiKey, $url);`
+    * `$daraz = new Daraz($userId, $apiKey, $url);`
 
 ### Available API Endpoints
 
-***Use these calls to get required results***
+***Use these calls to get required results. Get complete information on Daraz API [here.](https://www.daraz.com/sellerapi-docs)***
     
 0. ``getSeller()`` - To get seller information by the current user ID.
 
@@ -74,5 +75,3 @@
 24. ``getPayoutStatus()`` - To get the payout status for a specified period.
 
 25. ``getTransactionDetails()`` - To get transaction or fee details for a specified period.
-
-***Get complete information on Daraz API [here.](https://www.daraz.com/sellerapi-docs)***
