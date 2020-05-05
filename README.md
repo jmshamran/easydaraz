@@ -32,7 +32,7 @@
 
 3. ``getBrands()`` - Retrieve all product brands in the system.
 
-4. ``createProduct()`` - Create a product (use an array of attributes)
+4. ``createProduct()`` - Create a product (use an array of attributes).
 
 5. ``updateProduct()`` - Update attributes or SKUs of an existing product. One request can update only 1 product.
 
