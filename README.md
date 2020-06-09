@@ -38,9 +38,9 @@
 
 6. ``uploadImage()`` - To upload a single image file and accept binary stream with file content.
 
-7. ``migrateImage()`` - To migrate a single image from an external site to Daraz site.
+7. ``migrateImage()`` - To migrate a single image from an external site to Daraz site (Response provides migrated Image URLs).
 
-8. ``migrateImages()`` -  To migrate multiple images from an external site to Daraz site (This call's response does not contain URLs).
+8. ``migrateImages()`` -  To migrate multiple images from an external site to Daraz site (This call's response doesn't provide migrated image URLs).
 
 9. ``getResponse()`` - To get the returned information from the system for the UploadImages and MigrateImages API
 
