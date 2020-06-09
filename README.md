@@ -40,38 +40,40 @@
 
 7. ``migrateImage()`` - To migrate a single image from an external site to Daraz site.
 
-8. ``getResponse()`` - To get the returned information from the system for the UploadImages and MigrateImages API
+8. ``migrateImages()`` -  To migrate multiple images from an external site to Daraz site. (This call's response does not contain URLs )
 
-9. ``getAllProducts()`` - Get all or a range of products.
+9. ``getResponse()`` - To get the returned information from the system for the UploadImages and MigrateImages API
 
-10. ``getProducts()`` - To get all or a range of products.
+10. ``getAllProducts()`` - Get all or a range of products.
 
-11. ``setImages()`` - To set the images for an existing product by associating one or more image URLs with it.
+11. ``getProducts()`` - To get all or a range of products.
 
-12. ``updatePriceQuantity()`` - To update the price and quantity of one or more existing products.
+12. ``setImages()`` - To set the images for an existing product by associating one or more image URLs with it.
 
-13. ``getOrder()`` - To get the order details for a single order.
+13. ``updatePriceQuantity()`` - To update the price and quantity of one or more existing products.
 
-14. ``getOrders()`` - To get the customer details for a range of orders.
+14. ``getOrder()`` - To get the order details for a single order.
 
-15. ``getOrderItems()`` - To get the item information of one or more orders.
+15. ``getOrders()`` - To get the customer details for a range of orders.
 
-16. ``getMultipleOrderItems()`` - To get the item information of one or more orders.
+16. ``getOrderItems()`` - To get the item information of one or more orders.
 
-17. ``setInvoiceNumber()`` - To set the invoice access key.
+17. ``getMultipleOrderItems()`` - To get the item information of one or more orders.
 
-18. ``setStatusToPackedByMarketplace()`` - To mark order items as being packed.
+18. ``setInvoiceNumber()`` - To set the invoice access key.
 
-19. ``setStatusToReadyToShip()`` - To mark an order item as being ready to ship.
+19. ``setStatusToPackedByMarketplace()`` - To mark order items as being packed.
 
-20. ``getDocument()`` - To retrieve order-related documents, including invoices, shipping labels, and shipping parcels.
+20. ``setStatusToReadyToShip()`` - To mark an order item as being ready to ship.
 
-21. ``getFailureReasons()`` - To get additional error context for SetStatusToCanceled.
+21. ``getDocument()`` - To retrieve order-related documents, including invoices, shipping labels, and shipping parcels.
 
-22. ``setStatusToCanceled()`` - To cancel a single item.
+22. ``getFailureReasons()`` - To get additional error context for SetStatusToCanceled.
 
-23. ``getQCStatus()`` - To get the quality control status of items being listed.
+23. ``setStatusToCanceled()`` - To cancel a single item.
 
-24. ``getPayoutStatus()`` - To get the payout status for a specified period.
+24. ``getQCStatus()`` - To get the quality control status of items being listed.
 
-25. ``getTransactionDetails()`` - To get transaction or fee details for a specified period.
+25. ``getPayoutStatus()`` - To get the payout status for a specified period.
+
+26. ``getTransactionDetails()`` - To get transaction or fee details for a specified period.

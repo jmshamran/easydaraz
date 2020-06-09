@@ -102,6 +102,37 @@ class Daraz
     }
 
     /**
+     * Use this call to migrate multiple images from an external site to Daraz site.
+     * Allowed image formats are JPG and PNG. The maximum size of an image file is 1MB.
+     * @param $image_url_1 string
+     * @return array
+     */
+    public function migrateImages($image_url_1, $image_url_2 = Null, $image_url_3 = Null, $image_url_4 = Null, $image_url_5 = Null, $image_url_6 = Null, $image_url_7 = Null, $image_url_8 = Null)
+    {
+        $parameters = $this->setSpecificParam([
+            'Action' => 'MigrateImages',
+            'Timestamp' => $this->getTimeStamp(),
+        ]);
+
+        $img_array = [
+            'Images' => [
+                'Url' => $image_url_1,
+                'Url' => $image_url_2,
+                'Url' => $image_url_3,
+                'Url' => $image_url_4,
+                'Url' => $image_url_5,
+                'Url' => $image_url_6,
+                'Url' => $image_url_7,
+                'Url' => $image_url_8,
+            ]
+        ];
+
+        $image_xml = ArrayToXml::convert($img_array, 'Request');
+        $queryString = $this->getQueryString($parameters);
+        return $this->sendPostRequest($queryString, $image_xml);
+    }
+
+    /**
      * Use this call to get the returned information from the system for the UploadImages and MigrateImages API.
      * @param $request_ID mixed
      * @return array
@@ -114,8 +145,7 @@ class Daraz
         ]);
 
         $id = [
-            'RequestId' => [$request_ID
-            ]
+            'RequestId' => [$request_ID]
         ];
 
         $response_xml = ArrayToXml::convert($id, 'Request');
@@ -672,8 +702,11 @@ class Daraz
         $api_key = $this->apiKey;
         $parameters['Signature'] =
             rawurlencode(hash_hmac('sha256', $concatenated, $api_key, false));
-        return http_build_query($parameters, '', '&',
-            PHP_QUERY_RFC3986);
+        return http_build_query(
+            $parameters,
+            '',
+            '&',
+            PHP_QUERY_RFC3986
+        );
     }
-    
 }
