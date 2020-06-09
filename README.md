@@ -40,7 +40,7 @@
 
 7. ``migrateImage()`` - To migrate a single image from an external site to Daraz site.
 
-8. ``migrateImages()`` -  To migrate multiple images from an external site to Daraz site. (This call's response does not contain URLs )
+8. ``migrateImages()`` -  To migrate multiple images from an external site to Daraz site (This call's response does not contain URLs).
 
 9. ``getResponse()`` - To get the returned information from the system for the UploadImages and MigrateImages API
 
