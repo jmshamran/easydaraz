@@ -12,8 +12,8 @@
    ```
 4. Define following variables in your code.
     ```go
-    $apiKey = 'Your Darz API-Key';
-    $userId = 'Your Daraz E-mail';
+    $apiKey = 'Your Daraz API-Key';
+    $userId = 'Your E-mail';
     $url = 'Your Daraz API URL';
    ```
     > ###### ex: https://api.sellercenter.daraz.lk   - for Sri Lanka
@@ -77,3 +77,38 @@
 25. ``getPayoutStatus()`` - To get the payout status for a specified period.
 
 26. ``getTransactionDetails()`` - To get transaction or fee details for a specified period.
+
+****Example Array****
+```go
+$addProductArray = [
+    'Product' => [
+                'PrimaryCategory' => '9098',
+                'SPUId' => '',
+                'AssociatedSku' => '',
+                'Attributes' => [
+                    'name' => 'T-800 Terminator',
+                    'short_description' => 'Premium Skynet Product',
+                    'brand' => 'Skynet',
+                    'model' => '',
+                ],
+                'Skus' => [
+                    'Sku' => [
+                        'SellerSku' => 'sudo_T800_init',
+                        'color_family' => 'Black',
+                        'quantity' => '1000',
+                        'price' => '20000',
+                        'package_length' => '10',
+                        'package_height' => '10',
+                        'package_width' => '10',
+                        'package_weight' => '1',
+                        'package_content' => '',
+                        'Images' => [
+                            'Image' => [
+                                'https://static-01.daraz.lk/p/8ef1381b408720516321407d91bd2a8f.jpg',
+                            ]
+                        ],
+                    ],
+                ],
+            ],
+];
+```
