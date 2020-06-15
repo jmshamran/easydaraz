@@ -104,7 +104,7 @@ $addProductArray = [
                         'package_content' => '',
                         'Images' => [
                             'Image' => [
-                                'https://static-01.daraz.lk/p/8ef1381b408720516321407d91bd2a8f.jpg',
+                                "https://static-01.daraz.lk/p/8ef1381b408720516321407d91bd2a8f.jpg",
                             ]
                         ],
                     ],
