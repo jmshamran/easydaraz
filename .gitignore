@@ -12,6 +12,7 @@ npm-debug.log
 yarn-error.log
 .idea
 .vs
+.vscode
 /custom_api
 /docs
 test.php
