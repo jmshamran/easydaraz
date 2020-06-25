@@ -8,8 +8,6 @@
 
 namespace daraz\easydaraz;
 
-ini_set('max_execution_time', '1000');
-
 use Spatie\ArrayToXml\ArrayToXml;
 use GuzzleHttp\Client;
 
