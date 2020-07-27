@@ -1,6 +1,6 @@
 {
-    "name": "daraz/easydaraz",
-    "description": "A package to make api endpoint calls to darz e-commerce site for sellers",
+    "name": "shamran/easydaraz",
+    "description": "A package to make api endpoint calls to daraz e-commerce site for sellers",
     "type": "library",
     "require": {
         "spatie/array-to-xml": "^2.11"
@@ -15,10 +15,10 @@
             "email": "jmshamran22@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-	"autoload": {
+    "minimum-stability": "stable",
+    "autoload": {
         "psr-4": {
-            "daraz\\easydaraz\\": "src"
+            "shamran\\easydaraz\\": "src"
         }
     }
 }

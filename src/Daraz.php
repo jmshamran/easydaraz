@@ -6,7 +6,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace daraz\easydaraz;
+namespace shamran\easydaraz;
 
 use Spatie\ArrayToXml\ArrayToXml;
 use GuzzleHttp\Client;
