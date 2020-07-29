@@ -13,7 +13,7 @@ use GuzzleHttp\Client;
 
 class Daraz
 {
-    const VERSION = '1.1';
+    const VERSION = '1.0';
     const FORMAT = 'JSON';
     private $defaultParams, $apiKey, $url;
 
